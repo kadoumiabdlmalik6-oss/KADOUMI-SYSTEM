@@ -1,5 +1,6 @@
 {
   "name": "KDM SYSTEM",
   "description": "A professional, mobile-responsive landing page for trading services featuring signal links, a trading journal, and community access.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [],
+  "majorCapabilities": []
 }

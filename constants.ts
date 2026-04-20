@@ -24,7 +24,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
     id: '3',
     title: 'KDM SIGNAL',
     subtitle: 'مجتمع خاص للمتداولين المحترفين',
-    url: '#', // Placeholder, handled in LinkButton component
+    url: 'https://www.appcreator24.com/app4005308-l1ev4w',
     icon: Radio,
     type: LinkType.SIGNAL,
   },
