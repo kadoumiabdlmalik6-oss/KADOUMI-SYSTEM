@@ -32,7 +32,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
     id: '4',
     title: 'KDM JOURNAL',
     subtitle: 'سجل صفقاتك وحلل أداءك',
-    url: 'https://www.appcreator24.com/app3802649-fs1bor',
+    url: 'https://www.appcreator24.com/app4005324-mpardf',
     icon: BookOpen,
     type: LinkType.JOURNAL,
   },
