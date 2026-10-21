@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SocialLink, LinkType } from '../types';
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Clock } from 'lucide-react';
 
 interface LinkButtonProps {
   link: SocialLink;
@@ -27,12 +27,25 @@ const getBrandColor = (type: LinkType, isPrimary?: boolean) => {
 
 const LinkButton: React.FC<LinkButtonProps> = ({ link, index }) => {
   const Icon = link.icon;
+  const [showPending, setShowPending] = useState(false);
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (link.type === LinkType.SIGNAL) {
+      e.preventDefault();
+      setShowPending(true);
+      // Hide the message automatically after 2 seconds
+      setTimeout(() => {
+        setShowPending(false);
+      }, 2000);
+    }
+  };
   
   return (
     <motion.a
       href={link.url}
-      target="_blank"
+      target={link.type === LinkType.SIGNAL ? "_self" : "_blank"}
       rel="noopener noreferrer"
+      onClick={handleClick}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
@@ -43,6 +56,16 @@ const LinkButton: React.FC<LinkButtonProps> = ({ link, index }) => {
         cursor-pointer
       `}
     >
+      {/* Pending State Overlay */}
+      {showPending && (
+        <div className="absolute inset-0 z-20 flex items-center justify-center bg-dark-950/90 backdrop-blur-sm rounded-2xl animate-in fade-in duration-200">
+          <span className="text-white font-bold text-lg flex items-center gap-2">
+            <Clock size={20} className="animate-pulse" />
+            قيد الانتظار
+          </span>
+        </div>
+      )}
+
       <div className={`
         p-3 rounded-xl mr-4 ml-4
         ${link.isPrimary ? 'bg-white/20' : 'bg-dark-950/30'}

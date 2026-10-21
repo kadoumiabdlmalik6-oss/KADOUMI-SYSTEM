@@ -16,7 +16,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
     id: '2',
     title: 'WHATSAPP',
     subtitle: 'للاستفسارات والاشتراكات الخاصة',
-    url: 'https://wa.me/212722146260',
+    url: 'https://wa.me/212710903190',
     icon: MessageCircle,
     type: LinkType.WHATSAPP,
   },
@@ -24,7 +24,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
     id: '3',
     title: 'KDM SIGNAL',
     subtitle: 'مجتمع خاص للمتداولين المحترفين',
-    url: 'https://www.appcreator24.com/app4005308-l1ev4w',
+    url: '#', // Placeholder, handled in LinkButton component
     icon: Radio,
     type: LinkType.SIGNAL,
   },
